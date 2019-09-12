@@ -34,7 +34,7 @@ public class ToastyPlugin extends CordovaPlugin {
         return false;
       }
       
-	Persona per = new Persona("Luis", "Huasacca");
+	//Persona per = new Persona("Luis", "Huasacca");
 	
 	    
         //Intent intent = new Intent(context, MainActivity.class);
@@ -42,7 +42,7 @@ public class ToastyPlugin extends CordovaPlugin {
         //this.cordova.startActivityForResult((CordovaPlugin) this,intent, "Hola");	    
 	    
      //Toast toast1 = Toast.makeText(cordova.getActivity(), message,Toast.LENGTH_SHORT);
-	Toast toast1 = Toast.makeText(cordova.getActivity(), per.getName() + per.getLastname(),Toast.LENGTH_SHORT);
+	//Toast toast1 = Toast.makeText(cordova.getActivity(), per.getName() + per.getLastname(),Toast.LENGTH_SHORT);
      toast1.show(); 
       
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
