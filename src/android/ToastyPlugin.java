@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import android.os.Handler;
 
 // importo del aar
-import card.entel.testlibrary01.*;
+//  import card.entel.testlibrary01.*;
 
 public class ToastyPlugin extends CordovaPlugin {
 
