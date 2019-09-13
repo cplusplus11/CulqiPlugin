@@ -25,8 +25,8 @@
             </feature>
         </config-file>
             
-        <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/luis" />
-        <!-- <resource-file src="aar/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/> -->
-        <lib-file src="src/android/testlibrary01-debug.aar"/>
+        <source-file src="src/android/com/luis/ToastyPlugin.java" target-dir="src/com/luis" />
+        <!-- <resource-file src="aar/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/> 
+        <lib-file src="src/android/testlibrary01-debug.aar"/>-->
     </platform>
 </plugin>
