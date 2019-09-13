@@ -12,7 +12,7 @@ import android.os.Handler;
 
 // importo del aar
 // import card.entel.testlibrary01.bean;
-import com.alignet.api.payme.bean.*;
+// import com.alignet.api.payme.bean.*;
 public class ToastyPlugin extends CordovaPlugin {
 
   @Override
