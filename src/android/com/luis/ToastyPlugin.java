@@ -1,4 +1,4 @@
-package com.luis.cordova.plugin;
+package com.luis;
 // The native Toast API
 import android.widget.Toast;
 // Cordova-required packages
