@@ -29,10 +29,11 @@
         <!-- <resource-file src="aar/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/> 
         <lib-file src="src/android/testlibrary01-debug.aar"/>
  <resource-file src="src/android/payme-debug.aar"  target="libs/payme-debug.aar"/>
+<resource-file src="src/android/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/>
                 -->
         <framework src="src/android/testlibrary01-debug.gradle" custom="true" type="gradleReference" />
-        <resource-file src="src/android/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/>
+        
             
-            <resource-file src="aar/payme-debug.aar"  target="libs/payme-debug.aar"/>
+            <resource-file src="src/android/payme-debug.aar"  target="libs/payme-debug.aar"/>
     </platform>
 </plugin>
