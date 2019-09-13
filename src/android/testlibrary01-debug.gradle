@@ -5,7 +5,7 @@
    }
    }
   dependencies {
-   compile(name:'testlibrary01-debug', ext:'aar')
+   compile(name:'payme-debug', ext:'aar')
    }
  android {
     packagingOptions {
