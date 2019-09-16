@@ -49,18 +49,18 @@ public class ToastyPlugin extends CordovaPlugin {
         //intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
         //this.cordova.startActivityForResult((CordovaPlugin) this,intent, "Hola");	
 	    
-	Bundle bundle = new Bundle();
+	/*Bundle bundle = new Bundle();
         bundle.putString(Constants.EXTRA_MERCHANT_ENVDOMAIN, URL);
         bundle.putParcelable(Constants.EXTRA_MERCHANT_OPERATION, merchantOperation);
         bundle.putBoolean(Constants.EXTRA_ENABLED_MPOS, false);    
-	/*   
+	   
 	Intent intent = new Intent(context, PayActivity.class);
 	intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
 	this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  */
 	    
-     	//Toast toast1 = Toast.makeText(cordova.getActivity(), message,Toast.LENGTH_SHORT);
-	//toast1.show(); 
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), Constants.EXTRA_MERCHANT_ENVDOMAIN,Toast.LENGTH_SHORT);
+	toast1.show(); 
       
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
