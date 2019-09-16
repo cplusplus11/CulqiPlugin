@@ -17,7 +17,7 @@ import com.alignet.api.payme.wallet.models.EnvDomain;
 import com.alignet.api.payme.wallet.pay.activities.PayActivity;
 
 // importo del aar de prueba clase Persona
- import card.entel.testlibrary01.bean.Persona;
+// import card.entel.testlibrary01.bean.Persona;
 
 
 public class ToastyPlugin extends CordovaPlugin {
