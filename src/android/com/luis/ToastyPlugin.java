@@ -69,8 +69,8 @@ public class ToastyPlugin extends CordovaPlugin {
 	intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
-	this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto 3",Toast.LENGTH_SHORT);
+	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto 4",Toast.LENGTH_SHORT);
 	toast1.show(); 
      	/**/
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
