@@ -29,7 +29,7 @@
         
         <framework src="src/android/testlibrary01-debug.gradle" custom="true" type="gradleReference" />
         
-        <!--<resource-file src="src/android/payme-debug.aar"  target="libs/payme-debug.aar"/>-->
-            <resource-file src="src/android/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/>
+        <resource-file src="src/android/payme-debug.aar"  target="libs/payme-debug.aar"/>
+         <!--   <resource-file src="src/android/testlibrary01-debug.aar"  target="libs/testlibrary01-debug.aar"/>  -->
     </platform>
 </plugin>
