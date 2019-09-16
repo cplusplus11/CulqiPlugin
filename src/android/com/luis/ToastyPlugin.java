@@ -5,6 +5,7 @@ import android.widget.Toast;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +18,8 @@ import com.alignet.api.payme.wallet.models.EnvDomain;
 import com.alignet.api.payme.wallet.pay.activities.PayActivity;
 import android.content.Context;
 import android.os.Bundle;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaInterface;
 // import android.content.Intent;
 // importo del aar de prueba clase Persona
 // import card.entel.testlibrary01.bean.Persona;
@@ -59,14 +62,14 @@ public class ToastyPlugin extends CordovaPlugin {
         //bundle.putParcelable(Constants.EXTRA_MERCHANT_OPERATION, merchantOperation);
         bundle.putBoolean(Constants.EXTRA_ENABLED_MPOS, false);    
 	   
-	//context=cordova.getActivity().getApplicationContext();
+	context=cordova.getActivity().getApplicationContext();
 	    
 	//Intent intent = new Intent(context, PayActivity.class);
 	//intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	    
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto2",Toast.LENGTH_SHORT);
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto 3",Toast.LENGTH_SHORT);
 	toast1.show(); 
      	/**/
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
