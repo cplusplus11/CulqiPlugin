@@ -15,7 +15,7 @@ import com.alignet.api.payme.bean.*;
 import com.alignet.api.payme.util.Constants;
 import com.alignet.api.payme.wallet.models.EnvDomain;
 import com.alignet.api.payme.wallet.pay.activities.PayActivity;
-
+import android.content.Context;
 import android.os.Bundle;
 // import android.content.Intent;
 // importo del aar de prueba clase Persona
