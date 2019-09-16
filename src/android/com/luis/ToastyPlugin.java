@@ -20,7 +20,8 @@ import android.content.Context;
 import android.os.Bundle;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaInterface;
-// import android.content.Intent;
+import android.content.Intent;
+
 // importo del aar de prueba clase Persona
 // import card.entel.testlibrary01.bean.Persona;
 
@@ -64,10 +65,10 @@ public class ToastyPlugin extends CordovaPlugin {
 	   
 	context=cordova.getActivity().getApplicationContext();
 	    
-	//Intent intent = new Intent(context, PayActivity.class);
-	//intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
+	Intent intent = new Intent(context, PayActivity.class);
+	intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
+	this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	    
      	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto 3",Toast.LENGTH_SHORT);
 	toast1.show(); 
