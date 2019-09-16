@@ -49,8 +49,8 @@ public class ToastyPlugin extends CordovaPlugin {
         //intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
         //this.cordova.startActivityForResult((CordovaPlugin) this,intent, "Hola");	
 	    
-	/*Bundle bundle = new Bundle();
-        bundle.putString(Constants.EXTRA_MERCHANT_ENVDOMAIN, URL);
+	Bundle bundle = new Bundle();
+        /*bundle.putString(Constants.EXTRA_MERCHANT_ENVDOMAIN, URL);
         bundle.putParcelable(Constants.EXTRA_MERCHANT_OPERATION, merchantOperation);
         bundle.putBoolean(Constants.EXTRA_ENABLED_MPOS, false);    
 	   
