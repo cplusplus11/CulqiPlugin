@@ -24,6 +24,8 @@ import android.os.Bundle;
 
 public class ToastyPlugin extends CordovaPlugin {
 
+ private Context context=null;
+	
   @Override
   public boolean execute(String action, JSONArray args,final CallbackContext callbackContext) {
      
@@ -57,12 +59,14 @@ public class ToastyPlugin extends CordovaPlugin {
         //bundle.putParcelable(Constants.EXTRA_MERCHANT_OPERATION, merchantOperation);
         bundle.putBoolean(Constants.EXTRA_ENABLED_MPOS, false);    
 	   
-	//Intent intent = new Intent(context, PayActivity.class);
+	context=cordova.getActivity().getApplicationContext();
+	    
+	Intent intent = new Intent(context, PayActivity.class);
 	//intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	    
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto",Toast.LENGTH_SHORT);
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto2",Toast.LENGTH_SHORT);
 	toast1.show(); 
      	/**/
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
