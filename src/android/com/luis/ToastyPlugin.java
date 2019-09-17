@@ -44,7 +44,23 @@ public class ToastyPlugin extends CordovaPlugin {
       try {
         JSONObject options = args.getJSONObject(0);
         message = options.getString("message");
-        show(message);
+        
+		this.cordova.getActivity().runOnUiThread(new Runnable(){
+                public void run(){
+                    try{
+                        show(message);
+                    }catch(Exception e){
+                        callbackContext.error(e.getMessage());
+                    }
+                    
+                }
+         });
+		
+		
+		
+		
+		
+		
       } catch (JSONException e) {
         callbackContext.error("Error encountered: " + e.getMessage());
         return false;
@@ -94,8 +110,10 @@ private final void show(String mensajito) throws JSONException {
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito,Toast.LENGTH_SHORT);
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " con thread",Toast.LENGTH_SHORT);
 	toast1.show();
 	}
 	
 }
+
+/// aqui con thread
