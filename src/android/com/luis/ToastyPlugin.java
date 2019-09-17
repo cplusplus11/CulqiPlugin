@@ -65,7 +65,7 @@ public class ToastyPlugin extends CordovaPlugin {
 }
 	
 private final void show(final JSONObject params) throws JSONException {
-	String message;
+      /*String message;
       String duration;
 	
       try {
@@ -75,7 +75,7 @@ private final void show(final JSONObject params) throws JSONException {
       } catch (JSONException e) {
         callbackContext.error("Error encountered: " + e.getMessage());
         return false;
-      }
+      }*/
       
 	//Persona per = new Persona("Luis", "Huasacca");
 	//Toast toast1 = Toast.makeText(cordova.getActivity(), per.getName() + per.getLastname(),Toast.LENGTH_SHORT);
@@ -98,7 +98,7 @@ private final void show(final JSONObject params) throws JSONException {
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto thread",Toast.LENGTH_SHORT);
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), params.getString("Message"),Toast.LENGTH_SHORT);
 	toast1.show();
 	}
 	
