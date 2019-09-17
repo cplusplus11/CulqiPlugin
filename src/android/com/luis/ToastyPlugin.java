@@ -82,13 +82,10 @@ private final void show(String mensajito) throws JSONException {
 	 Intent intent = new Intent(context, PayActivity.class);
 	 intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 
-	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + Constants.REQUEST_CODE_PAYME,Toast.LENGTH_SHORT);
+	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " test01",Toast.LENGTH_SHORT);
 	toast1.show();
 	
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);
-
+	this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);
+    
 	}
-
 }
-
-/// aqui con thread
