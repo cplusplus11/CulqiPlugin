@@ -16,8 +16,8 @@
     </engines>
   
     <js-module src="www/toastyplugin.js" name="toastyPlugin">
-        <!-- <clobbers target="window.plugins.toastyPlugin" /> -->
-            <clobbers target="cordova.plugins.toastyPlugin" />
+        <!--  <clobbers target="cordova.plugins.toastyPlugin" /> -->
+           <clobbers target="window.plugins.toastyPlugin" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
