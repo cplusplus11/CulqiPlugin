@@ -105,8 +105,8 @@ private final void show(String mensajito) throws JSONException {
 	   
 	//context=cordova.getActivity().getApplicationContext();
 	    
-	// Intent intent = new Intent(context, PayActivity.class);
-	// intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
+	 Intent intent = new Intent(context, PayActivity.class);
+	 intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
