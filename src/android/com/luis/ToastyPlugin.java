@@ -39,7 +39,7 @@ public class ToastyPlugin extends CordovaPlugin {
     if (action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
       
-	try {
+	
 		JSONObject options = args.getJSONObject(0);
 		message = options.getString("message");
 		
@@ -56,13 +56,10 @@ public class ToastyPlugin extends CordovaPlugin {
 	    
 		return true;
 		
-      } catch (JSONException e) {
-		callbackContext.error("Error encountered: " + e.getMessage());
-		return false;
-      }
+      } 
 	    
 	    
-    }
+    
       
      /*PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
