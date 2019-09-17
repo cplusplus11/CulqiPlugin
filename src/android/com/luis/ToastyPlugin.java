@@ -71,21 +71,8 @@ public class ToastyPlugin extends CordovaPlugin {
 	
 private final void show(String mensajito) throws JSONException {
 
-	String URL = "2";    
-	Bundle bundle = new Bundle();
-        bundle.putString(Constants.EXTRA_MERCHANT_ENVDOMAIN, URL);
-        //bundle.putParcelable(Constants.EXTRA_MERCHANT_OPERATION, merchantOperation);
-        bundle.putBoolean(Constants.EXTRA_ENABLED_MPOS, false);    
-	   
-	context=cordova.getActivity().getApplicationContext();
-	    
-	 Intent intent = new Intent(context, PayActivity.class);
-	 intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
-
-	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " test01",Toast.LENGTH_SHORT);
+	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito ,Toast.LENGTH_SHORT);
 	toast1.show();
 	
-	this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);
-    
 	}
 }
