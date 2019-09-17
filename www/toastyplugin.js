@@ -1,11 +1,11 @@
-var exec = require('cordova/exec');
+/*var exec = require('cordova/exec');
 
 exports.showPasarela = function (arg0, success, error) {
     exec(success, error, 'ToastyPlugin', 'showPasarela', [arg0]);
-};
+};*/
 
 
-/*// Constructor vacío
+// Constructor vacío
 function ToastyPlugin() {}
 
 // recibir los datos
@@ -24,4 +24,4 @@ ToastyPlugin.install = function() {
   return window.plugins.toastyPlugin;
 };
 cordova.addConstructor(ToastyPlugin.install);
-*/
+
