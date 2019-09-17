@@ -39,10 +39,14 @@ public class ToastyPlugin extends CordovaPlugin {
     if (action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
       
-	    this.cordova.getActivity().runOnUiThread(new Runnable(){
+	try {
+		JSONObject options = args.getJSONObject(0);
+		message = options.getString("message");
+		
+		this.cordova.getActivity().runOnUiThread(new Runnable(){
                 public void run(){
                     try{
-                        show(args.getJSONObject(0));
+                        show(message);
                     }catch(Exception e){
                         callbackContext.error(e.getMessage());
                     }
@@ -50,8 +54,14 @@ public class ToastyPlugin extends CordovaPlugin {
                 }
             });
 	    
+		return true;
+		
+      } catch (JSONException e) {
+		callbackContext.error("Error encountered: " + e.getMessage());
+		return false;
+      }
 	    
-	    return true;
+	    
     }
       
      /*PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
@@ -64,7 +74,7 @@ public class ToastyPlugin extends CordovaPlugin {
     
 }
 	
-private final void show(final JSONObject params) throws JSONException {
+private final void show(String mensajito) throws JSONException {
       /*String message;
       String duration;
 	
@@ -98,7 +108,7 @@ private final void show(final JSONObject params) throws JSONException {
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), params.getString("Message"),Toast.LENGTH_SHORT);
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito,Toast.LENGTH_SHORT);
 	toast1.show();
 	}
 	
