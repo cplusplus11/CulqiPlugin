@@ -28,18 +28,46 @@ import android.content.Intent;
 
 public class ToastyPlugin extends CordovaPlugin {
 
- private Context context=null;
+ private Context context=null;   //importa normal
+ private CallbackContext callbackContext = null;
 	
   @Override
-  public boolean execute(String action, JSONArray args,final CallbackContext callbackContext) {
-     
-    if (!action.equals("show")) {
+  public boolean execute(String action, JSONArray args,final CallbackContext newcallbackContext) {
+     callbackContext = newcallbackContext;
+    
+	
+    if (action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
-      return false;
-    }else{
       
-      String message;
+	    this.cordova.getActivity().runOnUiThread(new Runnable(){
+                public void run(){
+                    try{
+                        show(args.getJSONObject(0));
+                    }catch(Exception e){
+                        callbackContext.error(e.getMessage());
+                    }
+                    
+                }
+            });
+	    
+	    
+	    return true;
+    }
+      
+     /*PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+      callbackContext.sendPluginResult(pluginResult);
+      return true; */
+	  
+	PluginResult pluginResult = new  PluginResult(PluginResult.Status.NO_RESULT);
+        pluginResult.setKeepCallback(true);
+        return false;  
+    
+}
+	
+private final void show(final JSONObject params) throws JSONException {
+	String message;
       String duration;
+	
       try {
         JSONObject options = args.getJSONObject(0);
         message = options.getString("message");
@@ -70,12 +98,8 @@ public class ToastyPlugin extends CordovaPlugin {
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto 4",Toast.LENGTH_SHORT);
-	toast1.show(); 
-     	/**/
-      PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-      callbackContext.sendPluginResult(pluginResult);
-      return true;
-    }
-}     
+     	Toast toast1 = Toast.makeText(cordova.getActivity(), "alberto thread",Toast.LENGTH_SHORT);
+	toast1.show();
+	}
+	
 }
