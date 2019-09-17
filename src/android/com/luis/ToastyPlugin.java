@@ -33,7 +33,7 @@ public class ToastyPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args,final CallbackContext callbackContext) {
      
-    if (!action.equals("showPasarela")) {
+    if (!action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
       return false;
     }else{
