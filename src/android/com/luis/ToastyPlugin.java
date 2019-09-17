@@ -114,7 +114,7 @@ private final void show(String mensajito) throws JSONException {
 	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " test 3",Toast.LENGTH_SHORT);
 	toast1.show();
 	
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent);
+	this.cordova.startActivityForResult((CordovaPlugin) this,intent);
 	
 	}
 	
