@@ -70,26 +70,7 @@ public class ToastyPlugin extends CordovaPlugin {
 }
 	
 private final void show(String mensajito) throws JSONException {
-      /*String message;
-      String duration;
-	
-      try {
-        JSONObject options = args.getJSONObject(0);
-        message = options.getString("message");
-        //duration = options.getString("duration");
-      } catch (JSONException e) {
-        callbackContext.error("Error encountered: " + e.getMessage());
-        return false;
-      }*/
-      
-	//Persona per = new Persona("Luis", "Huasacca");
-	//Toast toast1 = Toast.makeText(cordova.getActivity(), per.getName() + per.getLastname(),Toast.LENGTH_SHORT);
-     	//toast1.show(); 
-	    
-        
-        //intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
-        //this.cordova.startActivityForResult((CordovaPlugin) this,intent, "Hola");	
-	
+
 	String URL = "2";    
 	Bundle bundle = new Bundle();
         bundle.putString(Constants.EXTRA_MERCHANT_ENVDOMAIN, URL);
@@ -100,17 +81,14 @@ private final void show(String mensajito) throws JSONException {
 	    
 	 Intent intent = new Intent(context, PayActivity.class);
 	 intent.putExtra(Constants.PAYME_BUNDLE,bundle);        
-	    
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	
-	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " test 4",Toast.LENGTH_SHORT);
+
+	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + Constants.REQUEST_CODE_PAYME,Toast.LENGTH_SHORT);
 	toast1.show();
 	
-	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, "");
-	
+	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);
+
 	}
-	
+
 }
 
 /// aqui con thread
