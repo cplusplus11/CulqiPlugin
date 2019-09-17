@@ -33,41 +33,30 @@ public class ToastyPlugin extends CordovaPlugin {
 	
   @Override
   public boolean execute(String action, JSONArray args,final CallbackContext newcallbackContext) {
-     callbackContext = newcallbackContext;
     
-	
-    if (action.equals("show")) {
+	if (!action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
+      return false;
+    }else{
       
-	
-		JSONObject options = args.getJSONObject(0);
-		message = options.getString("message");
-		
-		this.cordova.getActivity().runOnUiThread(new Runnable(){
-                public void run(){
-                    try{
-                        show(message);
-                    }catch(Exception e){
-                        callbackContext.error(e.getMessage());
-                    }
-                    
-                }
-            });
-	    
-		return true;
-		
-      } 
-	    
-	    
-    
+      String message;
+      String duration;
+      try {
+        JSONObject options = args.getJSONObject(0);
+        message = options.getString("message");
+        show(message);
+      } catch (JSONException e) {
+        callbackContext.error("Error encountered: " + e.getMessage());
+        return false;
+      }
       
-     /*PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+      
+      
+      PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
-      return true; */
-	  
-	PluginResult pluginResult = new  PluginResult(PluginResult.Status.NO_RESULT);
-        pluginResult.setKeepCallback(true);
-        return false;  
+      return true;
+    }
+	
     
 }
 	
