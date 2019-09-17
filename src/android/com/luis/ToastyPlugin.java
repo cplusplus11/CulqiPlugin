@@ -34,13 +34,13 @@ public class ToastyPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args,final CallbackContext newcallbackContext) {
     
-	if (!action.equals("show")) {
+    if (!action.equals("show")) {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
       return false;
     }else{
       
       String message;
-      String duration;
+      
       try {
         JSONObject options = args.getJSONObject(0);
         message = options.getString("message");
@@ -110,8 +110,12 @@ private final void show(String mensajito) throws JSONException {
 	    
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, Constants.REQUEST_CODE_PAYME);  
 	//this.cordova.startActivityForResult((CordovaPlugin) this,intent, 0);   
-     	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " con thread",Toast.LENGTH_SHORT);
+     	
+	Toast toast1 = Toast.makeText(cordova.getActivity(), mensajito + " test 2",Toast.LENGTH_SHORT);
 	toast1.show();
+	
+	this.cordova.startActivityForResult((CordovaPlugin) this,intent);
+	
 	}
 	
 }
