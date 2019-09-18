@@ -40,6 +40,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
     implementation (name:'payme-debug',ext:'aar')
+    
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.craftman.cardform:cardform:0.0.2'
 }
 
 android {
